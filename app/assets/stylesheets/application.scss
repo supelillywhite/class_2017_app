@@ -1,1 +1,28 @@
 @import "bootstrap";
+
+// Custom Styles 
+
+// Homepage
+
+
+.button-container {
+
+  margin: 300px 0 0;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+
+
+.btn-primary {
+
+  padding: 20px;
+  margin: 30px
+
+}
+
+#header {
+  text-align: center;
+  width:100%;
+  margin: 100px 0 0 0
+}
