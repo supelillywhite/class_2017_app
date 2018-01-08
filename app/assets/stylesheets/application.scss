@@ -32,9 +32,28 @@
   background-size: cover;
 }
 
+#nav-container {
+  display:list-item;
+  justify-content:right;
+
+}
+
+#nav ul {
+  list-style-type:none;
+  float:right;
+  margin: 20px 50px 0 0;
+}
+
+#nav li {
+
+  display: inline-block;
+  padding: 5px;
+
+}
+
 .button-container {
 
-  margin: 300px 0 0;
+  margin: 200px 0 0;
   width: 100%;
   display: flex;
   justify-content:center;
