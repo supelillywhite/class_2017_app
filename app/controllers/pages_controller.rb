@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   private
 
   def get_random_restaurant
-    Restaurant.find([*..Restaurant.count].sample)
+    Restaurant.find([*1..Restaurant.count].sample)
   end
   
 end
