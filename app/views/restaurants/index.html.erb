@@ -2,6 +2,12 @@
 
 <h1>Restaurants</h1>
 
+<% if @restaurants.blank? %>
+  <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
+<% end %>
+
+
+
 <table>
   <thead>
     <tr>
@@ -35,3 +41,5 @@
 <br>
 
 <%= link_to 'New Restaurant', new_restaurant_path %>
+
+
