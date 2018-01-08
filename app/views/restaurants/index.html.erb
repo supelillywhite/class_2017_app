@@ -5,10 +5,11 @@
     <h1>Restaurants</h1>
 
     <table>
-      <thead>
+      <thead class="card">
         <tr>
+          <th class = 'top-bar'></th>
           <th class = 'top-bar'>Name</th>
-          <th class = 'top-bar'>Location</th>
+       
           <th class = 'top-bar'>Price</th>
           <th class = 'top-bar'>Category</th>
           <th class = 'top-bar'>Link</th>
@@ -17,15 +18,15 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody class="card">
         <% @restaurants.each do |restaurant| %>
           <tr>
-            <td><%= restaurant.name %></td>
-            <td><%= restaurant.location %></td>
-            <td><%= restaurant.price %></td>
-            <td><%= restaurant.category %></td>
-            <td><%= restaurant.link %></td>
-            <td><%= restaurant.user %></td>
+            <td><%= image_tag restaurant.thumb_image, class: 'index-picture' %></td>
+            <td class = 'table-item'><%= restaurant.name %></td>
+            <td class = 'table-item'><%= restaurant.price %></td>
+            <td class = 'table-item'><%= restaurant.category_id %></td>
+            <td class = 'table-item'><%= restaurant.link %></td>
+            <td class = 'table-item'><%= restaurant.user %></td>
             <td><%= link_to 'Show', restaurant %></td>
             <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
             <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

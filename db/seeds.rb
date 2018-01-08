@@ -5,6 +5,6 @@ require 'faker'
                      location: Faker::Address.street_address + ',' + Faker::Address.city + ' ' + Faker::Address.state_abbr + ',' + Faker::Address.zip_code,
                       price: Faker::Number.number(1),
                       link: "https://www.website.com",
-                      thumb_image: Faker::LoremPixel.image("150x150")
+                      thumb_image: "http://via.placeholder.com/60x60"
     )
 end
