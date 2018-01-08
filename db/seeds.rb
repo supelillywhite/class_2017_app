@@ -6,6 +6,13 @@ cats.each do |c|
   Category.create!(name: c)
 end
 
+  User.create!(
+                email: "test@test.com",
+                password: "asdfasdf",
+                password_confirmation: "asdfasdf",
+                roles: "admin"
+              )
+
 3.times do |i|
   User.create!(
                 email: "asdf#{i}@asdf.com",
