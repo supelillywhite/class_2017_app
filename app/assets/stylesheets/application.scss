@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 .top-bar {
   padding-right: 30px;
   padding-left: 30px;
@@ -18,4 +19,26 @@
   transform: translateX(-50%) translateY(-50%);
   background-image: url('https://2.bp.blogspot.com/-EYbh2iP0gZk/V9wJ6VxSeXI/AAAAAAAAAuI/trBz_EXF-_MLFFdU0588UAlDD4nhpa-8wCLcB/s1600/rotburger.jpg'); 
   background-size: cover;
+}
+
+.button-container {
+
+  margin: 300px 0 0;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+
+
+.btn-primary {
+
+  padding: 20px;
+  margin: 30px
+
+}
+
+#header {
+  text-align: center;
+  width:100%;
+  margin: 100px 0 0 0;
 }
