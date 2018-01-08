@@ -71,4 +71,5 @@ class RestaurantsController < ApplicationController
     def get_random_restaurant
       Restaurant.find([*1..Restaurant.count].sample)
     end
+
 end
