@@ -1,12 +1,11 @@
 @import "bootstrap";
 @import "login.scss";
-
+@import "buttons.scss";
 
 .top-bar {
   padding-right: 30px;
   padding-left: 30px;
 }
-
 
 .index-picture {
   padding: 2%;
@@ -17,7 +16,7 @@
 
 .cover {
 /*css for full size background image*/
-  background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center fixed; 
+  background: url(https://i.ytimg.com/vi/xeCy36VuoS4/maxresdefault.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,12 +26,11 @@
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
+ }
 
 #nav-container {
   display:list-item;
   justify-content:right;
-
 }
 
 #nav ul {
@@ -42,19 +40,16 @@
 }
 
 #nav li {
-
   display: inline-block;
   padding: 5px;
-
 }
 
 .nav-styling {
-  background-color: rgb(47,72,141);
+  background-color: transparent;
   height: 100px;
 }
 
 .button-container {
-
   margin: 200px 0 0;
   width: 100%;
   display: flex;
@@ -63,9 +58,7 @@
 
 
 .btn-primary {
-
   margin: 30px
-
 }
 
 #header {
@@ -122,5 +115,18 @@ ul {
   border-radius: 3px;
 }
 
+.site-background {
+/*css for full size background image*/
+  background: url(https://i.ytimg.com/vi/xeCy36VuoS4/maxresdefault.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  padding-bottom: 300px;
+}
 
+.show-padding {
+  padding-bottom: 300px;
+}
 

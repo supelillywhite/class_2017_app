@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ClassApp</title>
-    <%= csrf_meta_tags %>
+<div class = "site-background">
+  <html>
+    <head>
+      <title>ClassApp</title>
+      <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div class="nav-styling">
-      <%= render 'pages/nav' %>
-      <div class="search-bar">
-        <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search ...", class: "search-field" %>
-          <%= submit_tag "Search", :name => nil, class: "search-button" %>
-        <% end %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    
+    <body>
+      <div class="nav-styling">
+        <%= render 'pages/nav' %>
+        <div class="search-bar">
+          <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search ...", class: "search-field" %>
+            <%= submit_tag "Search", :name => nil, class: "search-button" %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
-    <% if @restaurants.blank? %>
-      <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
-    <% end %>
+      <% if @restaurants.blank? %>
+        <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
+      <% end %>
 
-    <%= yield %>
-  </body>
-</html>
+      <%= yield %>
+    </body>
+  </html>
+</div>
 
