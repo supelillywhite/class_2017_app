@@ -4,19 +4,24 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
-
-    if params[:search]
-      @restaurants = Restaurant.search(params[:search]).order("created_at DESC")
+    
+    @restaurants = if params[:search]
+      Restaurant.where('name ILIKE ?', "%#{params[:search]}%")
     else
-      @restaurants = Restaurant.all.order("created_at DESC")
+      @restaurants = Restaurant.all
     end
+     # t.string :name
+     #  t.string :location
+     #  t.integer :price
+     #  t.string :category
+     #  t.string :link
 
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @random_rest = get_random_restaurant
   end
 
   # GET /restaurants/new
@@ -72,5 +77,9 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:name, :location, :price, :category, :link, :user_id)
+    end
+
+    def get_random_restaurant
+      Restaurant.find([*1..Restaurant.count].sample)
     end
 end
