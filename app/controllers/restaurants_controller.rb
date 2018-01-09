@@ -22,6 +22,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1.json
   def show
     @random_rest = get_random_restaurant
+
+    
   end
 
   # GET /restaurants/new
