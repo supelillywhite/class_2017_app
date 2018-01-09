@@ -1,66 +1,35 @@
-<div>
-  <button type="button" class="btn btn-primary">Back</button>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <form role="form">
-
 <%= form_for(restaurant) do |f| %>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
 
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'name' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :link %>
-    <%= f.text_field :link %>
+    <%= f.text_field :location, class: 'form-control', placeholder: 'location' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :price, class: 'form-control', placeholder: 'price' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :link, class: 'form-control', placeholder: 'link' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category_id %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name,
+                            {
+                              include_blank: true
+                            },
+                            class: 'form-control'
+                            )
+                            %>
   </div>
   
   <div class="form-group">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="form-group">
-
-    <%= f.label :user %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :category %>
-  
-    <select class="selectpicker">
-    <option>Chinese</option>
-    <option>'Merican</option>
-    <option>Mexican</option>
-    <option>Mo Bettah</option>
-    <option>Chick-Fil-A</option>
-    </select>
-  </div>
-
-      <div class="form-group">
-        <label for="exampleInputFile">Upload a thumb image file <%= f.file_field :thumb_image %></label>
-      </div>
-
-
-  <div class="form-group">
-
     <%= f.submit "Submit", class: 'btn btn-primary' %>
   </div>
-  
-<% end %>
 
-            </form>
-        </div>
-    </div>
-</div>
+<% end %>

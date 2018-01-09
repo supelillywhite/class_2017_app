@@ -12,7 +12,8 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @restaurant.price %>
+  <%= price_change(@restaurant) %>
+    
 </p>
 
 <p>
@@ -25,7 +26,7 @@
   <%= @restaurant.user %>
 </p>
 
-<%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "show-button btn-primary" %>
+<%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "btn btn-primary" %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
 
