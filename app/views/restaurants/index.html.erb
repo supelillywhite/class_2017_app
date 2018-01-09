@@ -1,39 +1,64 @@
-<div class = 'index-background'>
+<div class = 'cover'>
   <div class = 'container'>
     <p id="notice"><%= notice %></p>
 
     <h1>Restaurants</h1>
 
-    <table>
-      <thead class="card">
-        <tr>
-          <th class = 'top-bar'></th>
-          <th class = 'top-bar'>Name</th>
-       
-          <th class = 'top-bar'>Price</th>
-          <th class = 'top-bar'>Category</th>
-          <th class = 'top-bar'>Link</th>
-          <th class = 'top-bar'>User</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+    
+    <ul class="topbar">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+          <li></li>
+        </div>
+        <div class="col-sm-2">
+          <li>Name</li>
+        </div>
+        <div class="col-sm-1">
+          <li>Price</li>
+        </div>
+        <div class="col-sm-1">
+          <li>Category</li>
+        </div>
+        <div class="col-sm-3">
+          <li>Link</li>
+        </div>
+        <div class="col-sm-1">
+          <li>User</li>
+        </div>
+      </div>
+    </ul>
 
-      <tbody class="card">
+    <ul class="topbar">
+      <div class="row row-color">
         <% @restaurants.each do |restaurant| %>
-          <tr>
-            <td><%= image_tag restaurant.thumb_image, class: 'index-picture' %></td>
-            <td class = 'table-item'><%= restaurant.name %></td>
-            <td class = 'table-item'><%= restaurant.price %></td>
-            <td class = 'table-item'><%= restaurant.category_id %></td>
-            <td class = 'table-item'><%= restaurant.link %></td>
-            <td class = 'table-item'><%= restaurant.user %></td>
-            <td><%= link_to 'Show', restaurant %></td>
-            <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-            <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+          <div class="col-sm-2 table-pic">
+            <li><%= image_tag restaurant.thumb_image, class: 'index-picture' %></li>
+          </div>
+          <div class="col-sm-2 table-text">
+            <li><%= restaurant.name %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= restaurant.price %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= restaurant.category_id %></li>
+          </div>
+          <div class="col-sm-3 table-text">
+            <li><%= restaurant.link %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= restaurant.user_id %></li>
+          </div>
+          <div class="col-sm-2 table-text">
+            <li><%= link_to 'Show', restaurant %></li>
+            <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+            <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </div>
         <% end %>
-      </tbody>
-    </table>
+      </div>
+    </ul>
+    
 
     <br>
 
