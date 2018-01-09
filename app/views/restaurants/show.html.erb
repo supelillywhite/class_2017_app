@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @restaurant.category %>
-</p>
-
-<p>
   <strong>Link:</strong>
   <%= @restaurant.link %>
 </p>
@@ -30,5 +25,8 @@
   <%= @restaurant.user %>
 </p>
 
+<%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "show-button btn-primary" %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
+
+
