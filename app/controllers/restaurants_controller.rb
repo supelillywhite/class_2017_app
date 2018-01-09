@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  access all: [:show, :index], user: :all , admin: :all
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
