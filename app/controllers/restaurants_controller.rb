@@ -80,6 +80,9 @@ class RestaurantsController < ApplicationController
     end
 
     def get_random_restaurant
-      Restaurant.find([*1..Restaurant.count].sample)
+      ids = []
+      Restaurant.all.each { |r| ids.push r.id }
+      Restaurant.find(ids.sample)
     end
+
 end
