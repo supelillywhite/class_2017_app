@@ -1,41 +1,77 @@
-<p id="notice"><%= notice %></p>
+<div class = "container show-padding">
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @restaurant.location %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= price_change(@restaurant) %>
-    
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @restaurant.location %>
+  </p>
 
-<p>
-  <strong>Link:</strong>
-  <%= @restaurant.link %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= price_change(@restaurant) %>
+      
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @restaurant.user %>
-</p>
+  <p>
+    <strong>Link:</strong>
+    <%= @restaurant.link %>
+  </p>
 
-<iframe
-   width="600"
-   height="450"
-   frameborder="0" style="border:0"
-   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDF5J93Eakk2D-gxiHYmPDA-vwwemgTxLQ
-     &q=<%= @restaurant.location %>" allowfullscreen>
-</iframe>
+  <p>
+    <strong>User:</strong>
+    <%= @restaurant.user %>
+  </p>
 
-<%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "btn btn-primary" %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+  <%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "btn btn-primary" %>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Back', restaurants_path %>
 
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @restaurant.name %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= @restaurant.location %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= price_change(@restaurant) %>
+      
+  </p>
+
+  <p>
+    <strong>Link:</strong>
+    <%= @restaurant.link %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @restaurant.user %>
+  </p>
+
+  <iframe
+     width="600"
+     height="450"
+     frameborder="0" style="border:0"
+     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDF5J93Eakk2D-gxiHYmPDA-vwwemgTxLQ
+       &q=<%= @restaurant.location %>" allowfullscreen>
+  </iframe>
+
+  <%= link_to "No likey! Find me a new restaurant.", @random_rest, class: "btn btn-primary" %>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Back', restaurants_path %>
+
+</div>
 
