@@ -15,6 +15,8 @@ class RestaurantsController < ApplicationController
 
   def show
     @random_rest = get_random_restaurant
+
+    
   end
 
 
