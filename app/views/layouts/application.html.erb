@@ -9,10 +9,15 @@
   </head>
 
   <body>
-    <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search ..." %>
-      <%= submit_tag "Search", :name => nil %>
-    <% end %>
+    <div class="nav-styling">
+      <%= render 'pages/nav' %>
+      <div class="search-bar">
+        <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search ...", class: "search-field" %>
+          <%= submit_tag "Search", :name => nil, class: "search-button" %>
+        <% end %>
+      </div>
+    </div>
 
     <% if @restaurants.blank? %>
       <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
