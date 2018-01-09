@@ -1,15 +1,15 @@
 
 @import "bootstrap";
 
+body{
+  overflow: auto;
+}
 
 .top-bar {
   padding-right: 30px;
   padding-left: 30px;
 }
 
-.table-item{
-
-}
 
 .index-picture {
   padding: 2%;
@@ -18,19 +18,20 @@
   background-repeat: cover; 
 }
 
-.index-background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background-image: url('https://2.bp.blogspot.com/-EYbh2iP0gZk/V9wJ6VxSeXI/AAAAAAAAAuI/trBz_EXF-_MLFFdU0588UAlDD4nhpa-8wCLcB/s1600/rotburger.jpg'); 
+.cover {
+/*css for full size background image*/
+  background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  
+  height: 100%;
+  background-color: #060;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+ 
 }
 
 #nav-container {
@@ -74,6 +75,52 @@
   margin: 100px 0 0 0;
 }
 
-.card-spacing {
-  margin: 5px;
+.restaurants {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.restaurants td, #restaurants th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.restaurants tr:nth-child(odd){
+  background-color: grey;
+}
+
+.restaurants tr:nth-child(even){
+  background-color: black;
+  color: white;
+}
+
+.restaurants th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topbar > li {
+  display: inline-block;
+}
+
+.row-color{
+  background-color: rgba(47,72,141,0.8);
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.table-pic {
+  padding: 20px;
+}
+
+.table-text {
+  padding-top: 60px;
+  text-align: center;
 }
