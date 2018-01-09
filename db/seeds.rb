@@ -27,7 +27,7 @@ end
                       price: Faker::Number.number(1),
                       link: "https://www.website.com",
 
-                      thumb_image: "http://via.placeholder.com/60x60",
+                      thumb_image: "http://via.placeholder.com/150x150",
 
                       category_id: [*1..Category.count].sample,
                       user_id: [*1..User.count].sample
