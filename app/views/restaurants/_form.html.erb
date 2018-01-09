@@ -1,35 +1,47 @@
 <%= form_for(restaurant) do |f| %>
 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'name' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.text_field :location, class: 'form-control', placeholder: 'location' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :price %>
+          <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.text_field :price, class: 'form-control', placeholder: 'price' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :link %>
+          <%= f.text_field :link, class: 'form-control', placeholder: 'Link' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.text_field :link, class: 'form-control', placeholder: 'link' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :category_id %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name,
-                            {
-                              include_blank: true
-                            },
-                            class: 'form-control'
-                            )
-                            %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.submit "Submit", class: 'btn btn-primary' %>
+        <div class="form-group">
+          <%= f.label :category_id %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name,
+                                  {
+                                    include_blank: true
+                                  },
+                                  class: 'form-control'
+                                  )
+                                  %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7"></div>
+    </div>
   </div>
 
 <% end %>
