@@ -4,7 +4,18 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    
+    @restaurants = if params[:search]
+      Restaurant.where('name ILIKE ?', "%#{params[:search]}%")
+    else
+      @restaurants = Restaurant.all
+    end
+     # t.string :name
+     #  t.string :location
+     #  t.integer :price
+     #  t.string :category
+     #  t.string :link
+
   end
 
   # GET /restaurants/1
