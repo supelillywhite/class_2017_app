@@ -1,37 +1,70 @@
-<p id="notice"><%= notice %></p>
+<div class = 'cover'>
+  <div class = 'container'>
+    <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
+    <h1>Restaurants</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th>Link</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody class="card">
+    
+    <ul class="topbar">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+          <li></li>
+        </div>
+        <div class="col-sm-2">
+          <li>Name</li>
+        </div>
+        <div class="col-sm-1">
+          <li>Price</li>
+        </div>
+        <div class="col-sm-1">
+          <li>Category</li>
+        </div>
+        <div class="col-sm-3">
+          <li>Link</li>
+        </div>
+        <div class="col-sm-1">
+          <li>User</li>
+        </div>
+      </div>
+    </ul>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.location %></td>
-        <td><%= restaurant.price %></td>
-        <td><%= restaurant.category %></td>
-        <td><%= restaurant.link %></td>
-        <td><%= restaurant.user %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <ul class="topbar">
+      <div class="row row-color">
+        <% @restaurants.each do |restaurant| %>
+          <div class="col-sm-2 table-pic">
+            <li><%= image_tag restaurant.thumb_image, class: 'index-picture' %></li>
+          </div>
+          <div class="col-sm-2 table-text">
+            <li><%= restaurant.name %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= price_change(restaurant) %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= restaurant.category_id %></li>
+          </div>
+          <div class="col-sm-3 table-text">
+            <li><%= restaurant.link %></li>
+          </div>
+          <div class="col-sm-1 table-text">
+            <li><%= restaurant.user_id %></li>
+          </div>
+          <div class="col-sm-2 table-text">
+            <li><%= link_to 'Show', restaurant %></li>
+            <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+            <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </div>
+        <% end %>
+      </div>
+    </ul>
+    
 
-<br>
+    <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+
+    <%= link_to 'New Restaurant', new_restaurant_path %>
+  </div>
+</div>
+

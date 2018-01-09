@@ -4,12 +4,26 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    
+    @restaurants = if params[:search]
+      Restaurant.where('name ILIKE ?', "%#{params[:search]}%")
+    else
+      @restaurants = Restaurant.all
+    end
+     # t.string :name
+     #  t.string :location
+     #  t.integer :price
+     #  t.string :category
+     #  t.string :link
+
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @random_rest = get_random_restaurant
+
+    
   end
 
   # GET /restaurants/new
@@ -66,4 +80,11 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit(:name, :location, :price, :category, :link, :user_id)
     end
+
+    def get_random_restaurant
+      ids = []
+      Restaurant.all.each { |r| ids.push r.id }
+      Restaurant.find(ids.sample)
+    end
+
 end
