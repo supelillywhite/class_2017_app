@@ -1,6 +1,5 @@
-<div class = 'cover'>
+<div class = 'cover display'>
   <div class = 'container'>
-    <p id="notice"><%= notice %></p>
 
     <h1>Restaurants</h1>
 
@@ -40,7 +39,7 @@
             <li><%= restaurant.name %></li>
           </div>
           <div class="col-sm-1 table-text">
-            <li><%= restaurant.price %></li>
+            <li><%= price_change(restaurant) %></li>
           </div>
           <div class="col-sm-1 table-text">
             <li><%= restaurant.category_id %></li>

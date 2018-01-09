@@ -1,43 +1,37 @@
 class RestaurantsController < ApplicationController
+  access all: [:show, :index], user: :all , admin: :all
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
   # GET /restaurants.json
   def index
-    
     @restaurants = if params[:search]
       Restaurant.where('name ILIKE ?', "%#{params[:search]}%")
     else
       @restaurants = Restaurant.all
     end
-     # t.string :name
-     #  t.string :location
-     #  t.integer :price
-     #  t.string :category
-     #  t.string :link
 
   end
 
-  # GET /restaurants/1
-  # GET /restaurants/1.json
+
   def show
     @random_rest = get_random_restaurant
+
+    
   end
 
-  # GET /restaurants/new
+
   def new
     @restaurant = Restaurant.new
   end
 
-  # GET /restaurants/1/edit
+
   def edit
   end
 
-  # POST /restaurants
-  # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
+    @restaurant.user_id = current_user.id
     respond_to do |format|
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
@@ -50,13 +44,14 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
-    respond_to do |format|
-      if @restaurant.update(restaurant_params)
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
-      else
-        format.html { render :edit }
+    # byebug
+      respond_to do |format|
+        if @restaurant.update(restaurant_params)
+          format.html { redirect_to @restaurant, notice: 'Blog was successfully updated.' }
+        else
+          format.html { render :edit }
+        end
       end
-    end
   end
 
   # DELETE /restaurants/1
@@ -72,11 +67,12 @@ class RestaurantsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
+      # byebug
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :location, :price, :category, :link, :user_id)
+      params.require(:restaurant).permit(:name, :location, :price, :link, :user_id, :category_id)
     end
 
     def get_random_restaurant

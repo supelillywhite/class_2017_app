@@ -3,12 +3,6 @@ class PagesController < ApplicationController
     @random_rest = get_random_restaurant
   end
 
-  def new
-  end
-
-  def create
-  end
-
   private
 
   def get_random_restaurant

@@ -1,15 +1,10 @@
 @import "bootstrap";
 @import "buttons.scss";
 
-body{
-  overflow: auto;
-}
-
 .top-bar {
   padding-right: 30px;
   padding-left: 30px;
 }
-
 
 .index-picture {
   padding: 2%;
@@ -25,36 +20,35 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
   height: 100%;
   background-color: #060;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
- 
-}
+ }
 
 #nav-container {
   display:list-item;
   justify-content:right;
-
 }
 
 #nav ul {
   list-style-type:none;
   float:right;
-  margin: 20px 50px 0 0;
+  margin: 5px 50px 0 0;
 }
 
 #nav li {
-
   display: inline-block;
   padding: 5px;
+}
 
+.nav-styling {
+  background-color: rgb(47,72,141);
+  height: 100px;
 }
 
 .button-container {
-
   margin: 200px 0 0;
   width: 100%;
   display: flex;
@@ -63,10 +57,7 @@ body{
 
 
 .btn-primary {
-
-  padding: 20px;
   margin: 30px
-
 }
 
 #header {
@@ -79,28 +70,6 @@ body{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-}
-
-.restaurants td, #restaurants th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.restaurants tr:nth-child(odd){
-  background-color: grey;
-}
-
-.restaurants tr:nth-child(even){
-  background-color: black;
-  color: white;
-}
-
-.restaurants th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
 }
 
 .topbar > li {
@@ -123,4 +92,24 @@ ul {
 .table-text {
   padding-top: 60px;
   text-align: center;
+}
+
+.display {
+  height: 4500px;
+}
+
+.search-bar {
+  padding-left: 40px;
+}
+
+.search-button {
+  background-color: rgb(143, 183, 247);
+  padding: 5px 20px 5px 20px;
+  border: none;
+  border-radius: 3px;
+}
+
+.search-field {
+  padding: 5px 20px 5px 20px;
+  border-radius: 3px;
 }
