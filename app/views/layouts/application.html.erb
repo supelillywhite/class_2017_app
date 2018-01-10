@@ -20,12 +20,7 @@
         </div>
       </div>
 
-      <% if @restaurants.blank? %>
-        <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
-      <% end %>
-
-      <%= yield %>
-    </body>
-  </html>
-</div>
+    <%= yield %>
+  </body>
+</html>
 
