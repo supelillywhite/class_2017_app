@@ -10,6 +10,7 @@
     <% if logged_in?(:user) %>
         <%= link_to "Add a Restaurant", new_restaurant_path, class: "home-button close" %>
     <% else %>
+        <%= link_to "Login to add a Restaurant", new_user_session_path, class: "logged-out btn btn-primary" %>
         <button class="close"><%= link_to "Login to add a Restaurant", new_user_session_path, class: "logged-out home-button" %></button>
     <% end %>
   </div>

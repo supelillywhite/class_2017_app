@@ -52,8 +52,10 @@
           </div>
           <div class="col-sm-2 table-text">
             <li><%= link_to 'Show', restaurant %></li>
-            <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
-            <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% if logged_in?(:admin) %>
+              <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+              <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -62,8 +64,9 @@
 
     <br>
 
-
-    <%= link_to 'New Restaurant', new_restaurant_path %>
+    <% if logged_in?(:user) %>
+      <%= link_to 'New Restaurant', new_restaurant_path %>
+      <% end %>
   </div>
 </div>
 
