@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "login.scss";
+@import "buttons.scss";
 
 .top-bar {
   padding-right: 30px;
@@ -14,7 +16,7 @@
 
 .cover {
 /*css for full size background image*/
-  background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center fixed; 
+  background: url(https://i.ytimg.com/vi/xeCy36VuoS4/maxresdefault.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -43,7 +45,7 @@
 }
 
 .nav-styling {
-  background-color: rgb(47,72,141);
+  background-color: transparent;
   height: 100px;
 }
 
@@ -112,3 +114,19 @@ ul {
   padding: 5px 20px 5px 20px;
   border-radius: 3px;
 }
+
+.site-background {
+/*css for full size background image*/
+  background: url(https://i.ytimg.com/vi/xeCy36VuoS4/maxresdefault.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  padding-bottom: 300px;
+}
+
+.show-padding {
+  padding-bottom: 300px;
+}
+
