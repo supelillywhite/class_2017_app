@@ -37,14 +37,12 @@ body {
   margin: 40px auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: black;
-  box-shadow: 10px 10px 0 rgba(0,0,0,.1);
+  background-color: rgba(21, 84, 243, .9);
   &__title {
     padding: 20px 0;
     text-align: center;
     
     h1 {
-      color: pink;
       position: relative;
       font-size: .8rem;
       text-transform: uppercase;
@@ -114,4 +112,8 @@ body {
   color: lighten(#000, 80%);
   letter-spacing: 2px;
   text-transform: uppercase;
+ }
+
+ .main-form a {
+  color:white;
  }
